@@ -13,4 +13,4 @@ You can access the project presentation by clicking the link below:
 
 ## 🎥 Demo Video
 Watch the demo video of the project by clicking the link below:
-[![Watch the demo](https://img.youtube.com/vi/QE77nLEU0X4/maxresdefault.jpg)]('https://youtu.be/QE77nLEU0X4')
+[![Watch the demo](https://img.youtube.com/vi/QE77nLEU0X4/maxresdefault.jpg)](https://youtu.be/QE77nLEU0X4)
