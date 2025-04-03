@@ -1,4 +1,6 @@
 "use client";
+import userDetails from "@/actions/userDetails"
+import { useQuery } from "@tanstack/react-query"
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -27,7 +29,7 @@ export default function K12Form() {
       country: "India",
     },
   });
-
+ const { data: user, error, isFetching } = useQuery<any>({ queryKey: ["userDetails"], queryFn: userDetails })
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     console.log(data)
     const res = await saveK12Details(data)
@@ -39,7 +41,9 @@ export default function K12Form() {
       toast.dismiss('something went wrong')
     }
   };
-
+  if(user?.grade){
+    redirect('/dashboard')
+  }
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 p-8 rounded-lg max-w-lg mx-auto">
         <h1 className="text-2xl font-bold text-center p-2 ">Welcome to OnBoarding Section of <p className="text-blue-400">Learner</p></h1>
